@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bookland.WebApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +26,11 @@ namespace Bookland.WebApplication.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        public ActionResult BuyBook()
+        {
+            var book = new Book();
+            return View(book);
         }
     }
 }
