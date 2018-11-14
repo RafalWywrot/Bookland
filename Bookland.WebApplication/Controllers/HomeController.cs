@@ -27,9 +27,19 @@ namespace Bookland.WebApplication.Controllers
 
             return View();
         }
+        [HttpGet]
         public ActionResult BuyBook()
         {
             var book = new Book();
+            return View(book);
+        }
+        [HttpPost]
+        public ActionResult BuyBook(Book book)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
             return View(book);
         }
     }
